@@ -12,15 +12,11 @@
         <div class="converter">
             <textarea id="input" placeholder="Enter text here..."></textarea>
             <div class="dropdown">
-                <select id="conversionType">
-                    <option value="binaryToText">Binary to Text</option>
-                    <option value="textToBinary">Text to Binary</option>
-                    <option value="hexToText">Hex to Text</option>
-                    <option value="textToHex">Text to Hex</option>
-                    <option value="base64ToText">Base64 to Text</option>
-                    <option value="textToBase64">Text to Base64</option>
-                    <option value="urlEncode">URL Encode</option>
-                    <option value="urlDecode">URL Decode</option>
+                <select id="converterType">
+                    <!-- Options will be populated dynamically -->
+                </select>
+                <select id="conversionDirection">
+                    <!-- Options will be populated dynamically -->
                 </select>
                 <button onclick="convert()">Convert</button>
             </div>

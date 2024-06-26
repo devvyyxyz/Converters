@@ -1,31 +1,46 @@
-function convert() {
-    const conversionType = document.getElementById('conversionType').value;
-    switch (conversionType) {
-        case 'binaryToText':
-            binaryToText();
-            break;
-        case 'textToBinary':
-            textToBinary();
-            break;
-        case 'hexToText':
-            hexToText();
-            break;
-        case 'textToHex':
-            textToHex();
-            break;
-        case 'base64ToText':
-            base64ToText();
-            break;
-        case 'textToBase64':
-            textToBase64();
-            break;
-        case 'urlEncode':
-            urlEncode();
-            break;
-        case 'urlDecode':
-            urlDecode();
-            break;
+document.addEventListener("DOMContentLoaded", () => {
+    populateConverterTypes();
+    populateDirection();
+    document.getElementById('converterType').addEventListener('change', populateDirection);
+});
+
+const converters = {
+    binary: {
+        toText: binaryToText,
+        fromText: textToBinary
+    },
+    hex: {
+        toText: hexToText,
+        fromText: textToHex
+    },
+    base64: {
+        toText: base64ToText,
+        fromText: textToBase64
+    },
+    url: {
+        toText: urlDecode,
+        fromText: urlEncode
     }
+};
+
+function populateConverterTypes() {
+    const converterType = document.getElementById('converterType');
+    converterType.innerHTML = Object.keys(converters).map(type => `<option value="${type}">${type.charAt(0).toUpperCase() + type.slice(1)}</option>`).join('');
+}
+
+function populateDirection() {
+    const converterType = document.getElementById('converterType').value;
+    const conversionDirection = document.getElementById('conversionDirection');
+    conversionDirection.innerHTML = `
+        <option value="toText">${converterType.charAt(0).toUpperCase() + converterType.slice(1)} to Text</option>
+        <option value="fromText">Text to ${converterType.charAt(0).toUpperCase() + converterType.slice(1)}</option>
+    `;
+}
+
+function convert() {
+    const converterType = document.getElementById('converterType').value;
+    const conversionDirection = document.getElementById('conversionDirection').value;
+    converters[converterType][conversionDirection]();
 }
 
 function binaryToText() {
