@@ -1,3 +1,33 @@
+function convert() {
+    const conversionType = document.getElementById('conversionType').value;
+    switch (conversionType) {
+        case 'binaryToText':
+            binaryToText();
+            break;
+        case 'textToBinary':
+            textToBinary();
+            break;
+        case 'hexToText':
+            hexToText();
+            break;
+        case 'textToHex':
+            textToHex();
+            break;
+        case 'base64ToText':
+            base64ToText();
+            break;
+        case 'textToBase64':
+            textToBase64();
+            break;
+        case 'urlEncode':
+            urlEncode();
+            break;
+        case 'urlDecode':
+            urlDecode();
+            break;
+    }
+}
+
 function binaryToText() {
     const binaryInput = document.getElementById('input').value;
     const binaryArray = binaryInput.split(' ');
