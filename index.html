@@ -8,12 +8,14 @@
 </head>
 <body>
     <div class="container">
-        <h1>Binary to Text Converter</h1>
+        <h1>Converter</h1>
         <div class="converter">
-            <textarea id="input" placeholder="Enter binary or text here..."></textarea>
+            <textarea id="input" placeholder="Enter binary, text, or hex here..."></textarea>
             <div class="buttons">
                 <button onclick="binaryToText()">Binary to Text</button>
                 <button onclick="textToBinary()">Text to Binary</button>
+                <button onclick="hexToText()">Hex to Text</button>
+                <button onclick="textToHex()">Text to Hex</button>
             </div>
             <textarea id="output" placeholder="Output will appear here..." readonly></textarea>
         </div>
