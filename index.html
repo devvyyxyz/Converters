@@ -1,16 +1,23 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>replit</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary to Text Converter</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
-  Hello world
-  <script src="script.js"></script>
+    <div class="container">
+        <h1>Binary to Text Converter</h1>
+        <div class="converter">
+            <textarea id="input" placeholder="Enter binary or text here..."></textarea>
+            <div class="buttons">
+                <button onclick="binaryToText()">Binary to Text</button>
+                <button onclick="textToBinary()">Text to Binary</button>
+            </div>
+            <textarea id="output" placeholder="Output will appear here..." readonly></textarea>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
-
 </html>
